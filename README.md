@@ -58,7 +58,7 @@ Un clúster Kubernetes consiste en un conjunto de máquinas de trabajo, llamadas
 El nodo(s) trabajador(es) aloja(n) los Pods que son los componentes de la carga de trabajo de la aplicación. El plano de control gestiona los nodos trabajadores y los Pods en el cluster. En entornos de producción, el plano de control suele ejecutarse en varios ordenadores y un clúster suele ejecutar varios nodos, lo que proporciona tolerancia a fallos y alta disponibilidad.
 
 <p align=center>
-<img src="images/k8s/3.svg" width="1000" >
+<img src="img/3.svg" width="1000" >
 </p>
 
 ### Componentes del plano de control
