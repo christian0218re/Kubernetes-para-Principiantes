@@ -13,26 +13,6 @@ Kubernetes es una plataforma portátil, extensible y de código abierto para ges
 - Retrocidiendo en el tiempo
 - Arquitectura
 - Instalación
-- Contextos
-- Imperativo vs Declarativo
-- Namespaces
-- Pod
-- Selectores
-- Pods Multi-Contenedores
-- ReplicaSet
-- Deployments
-- Stateful
-- Job
-- CronJob
-- Rolling Updates
-- Despliegue azul y verde
-- ClusterIP
-- NodePort
-- LoadBalancer
-- Persistence Volumen
-- ConfigMap
-- Secrets
-- LivenessProbe
 
 # Retrocediendo en el timepo
 
@@ -130,9 +110,22 @@ Probemos que la instalación de minikube fue exitosa:
 
 ## Pod
 
-En Kubernetes, un `nodo` es un servidor, ya sea físico o virtual, que forma parte del clúster. Este nodo actúa como una máquina de trabajo donde se ejecutan las cargas de trabajo. La unidad más pequeña y básica en Kubernetes es el Pod. Un Pod es una abstracción sobre un contenedor. Si estás familiarizado con Docker o imágenes de contenedores, un `Pod` proporciona una capa adicional sobre el contenedor, creando un entorno de ejecución. Kubernetes utiliza esta abstracción para desacoplar la tecnología de contenedores subyacente (como Docker), permitiendo que puedas cambiar el runtime de contenedores si es necesario. Esto significa que no interactúas directamente con Docker o cualquier otra tecnología de contenedores, sino con la capa de Kubernetes.
+En Kubernetes, un **nodo** es un servidor, ya sea físico o virtual, que forma parte del clúster. Este nodo actúa como una máquina de trabajo donde se ejecutan las cargas de trabajo. La unidad más pequeña y básica en Kubernetes es el **Pod**.
 
-Un Pod generalmente está diseñado para ejecutar un solo contenedor de aplicación. Sin embargo, es posible ejecutar múltiples contenedores dentro de un mismo Pod, aunque esto suele hacerse cuando hay un contenedor principal y uno o más contenedores auxiliares que brindan servicios complementarios.
+### ¿Qué es un Pod?
+
+Un Pod es una abstracción sobre un contenedor. Si estás familiarizado con Docker o imágenes de contenedores, un Pod proporciona una capa adicional sobre el contenedor, creando un entorno de ejecución. Kubernetes utiliza esta abstracción para desacoplar la tecnología de contenedores subyacente (como Docker), permitiendo que puedas cambiar el runtime de contenedores si es necesario. Esto significa que no interactúas directamente con Docker o cualquier otra tecnología de contenedores, sino con la capa de Kubernetes.
+
+### Características de un Pod
+
+- **Unidad básica**: Es la unidad más pequeña en Kubernetes.
+- **Diseño típico**: Generalmente está diseñado para ejecutar un solo contenedor de aplicación.
+- **Contenedores múltiples**: Es posible ejecutar múltiples contenedores dentro de un mismo Pod, aunque esto suele hacerse cuando hay un contenedor principal y uno o más contenedores auxiliares que brindan servicios complementarios.
+
+---
+
+En resumen, un Pod es la unidad fundamental en Kubernetes que encapsula uno o más contenedores, proporcionando un entorno de ejecución y desacoplando la tecnología de contenedores subyacente.
+
 ---
 ### Manifest de Pods
 
@@ -268,6 +261,7 @@ spec:
 Este **ReplicaSet** garantiza que siempre haya 3 réplicas del Pod en ejecución.
 
 ---
+
 ### Resumen
 
 - **Pods**: La unidad más pequeña en Kubernetes, creada a través de manifests que definen su configuración.
@@ -318,6 +312,7 @@ Además, puedes configurar certificados SSL para asegurar las conexiones.
 ---
 
 En resumen, los **Services** son esenciales para proporcionar conectividad estable a los Pods, mientras que **Ingress** mejora la accesibilidad y seguridad de las aplicaciones expuestas externamente. Juntos, estos componentes son fundamentales para gestionar el tráfico en un clúster de Kubernetes.
+
 ---
 
 
